@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 10:35:37 by chtan             #+#    #+#             */
-/*   Updated: 2024/04/07 08:42:26 by chtan            ###   ########.fr       */
+/*   Created: 2024/04/07 09:19:05 by chtan             #+#    #+#             */
+/*   Updated: 2024/04/07 09:19:18 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

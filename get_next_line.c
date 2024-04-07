@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 09:40:44 by chtan             #+#    #+#             */
-/*   Updated: 2024/04/05 11:43:42 by chtan            ###   ########.fr       */
+/*   Updated: 2024/04/07 12:48:18 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ char	*ft_line(char *buffer)
 	int		i;
 
 	i = 0;
-	while (!buffer[i])
+	if (!buffer[i])
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	line = ft_calloc(i + 1, sizeof(char));
+	line = ft_calloc(i + 2, sizeof(char));
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -68,27 +68,27 @@ char	*ft_line(char *buffer)
 
 char	*read_file(int fd, char *res)
 {
-	char	*buffer;
+	char	*temp_buffer;
 	int		byte_read;
 
 	if (!res)
 		res = ft_calloc (1, 1);
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	temp_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	byte_read = 1;
 	while (byte_read > 0)
 	{
-		byte_read = read(fd, buffer, BUFFER_SIZE);
+		byte_read = read(fd, temp_buffer, BUFFER_SIZE);
 		if (byte_read == -1)
 		{
-			free(buffer);
+			free(temp_buffer);
 			return (NULL);
 		}
-		buffer[byte_read] = 0;
-		res = ft_free(res, buffer);
-		if (ft_strchr(buffer, '\n'))
+		temp_buffer[byte_read] = 0;
+		res = ft_free(res, temp_buffer);
+		if (ft_strchr(temp_buffer, '\n'))
 			break ;
 	}
-	free(buffer);
+	free(temp_buffer);
 	return (res);
 }
 
@@ -98,8 +98,10 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (0);
+		return (NULL);
 	buffer = read_file(fd, buffer);
+	if (!buffer)
+		return (NULL);
 	line = ft_line(buffer);
 	buffer = ft_next(buffer);
 	return (line);
