@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 10:35:37 by chtan             #+#    #+#             */
-/*   Updated: 2024/04/05 11:43:01 by chtan            ###   ########.fr       */
+/*   Created: 2024/04/05 11:29:07 by chtan             #+#    #+#             */
+/*   Updated: 2024/04/05 11:29:10 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	return (result);
 }
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	size_t	i;
 
