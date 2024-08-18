@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:29:24 by chtan             #+#    #+#             */
-/*   Updated: 2024/04/07 09:15:58 by chtan            ###   ########.fr       */
+/*   Updated: 2024/08/08 13:29:30 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE  42

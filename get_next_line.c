@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 09:40:44 by chtan             #+#    #+#             */
-/*   Updated: 2024/04/07 12:48:18 by chtan            ###   ########.fr       */
+/*   Updated: 2024/07/19 17:05:17 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,3 +106,17 @@ char	*get_next_line(int fd)
 	buffer = ft_next(buffer);
 	return (line);
 }
+
+// #include "get_next_line.h"
+// #include <stdio.h>
+// #include <fcntl.h>
+// int    main(void)
+// {
+//     int fd;
+
+//     fd = open("text.txt", O_RDONLY);
+//     printf("%s\n",get_next_line(fd));
+//     printf("%s\n",get_next_line(fd));
+//     printf("%s\n",get_next_line(fd));
+//     return (0);
+// }
